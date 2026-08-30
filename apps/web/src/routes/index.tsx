@@ -43,7 +43,7 @@ function Section({
 function HomeComponent() {
   return (
     <main className="mx-auto w-full max-w-2xl px-5 pb-24">
-      <section className="py-10 sm:py-14">
+      <section className="pt-10 pb-4 sm:pt-14">
         <img
           src="/luiz.png"
           alt="Luiz Castro"
@@ -55,8 +55,7 @@ function HomeComponent() {
           Luiz Castro
         </h1>
         <p className="mt-4 text-muted-foreground">
-          AI Software engineer, building AI agents and tools. Passionate about design and user experience.
-        </p>
+          I build infrastructure and tools for AI agents, and care as much about the product and the user experience as the systems underneath.        </p>
         <p className="mt-4 text-muted-foreground">
           Currently building{" "}
           <HoverCard>
@@ -93,7 +92,7 @@ function HomeComponent() {
         </p>
       </section>
 
-      <footer className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pt-8 text-sm text-muted-foreground">
+      <footer className="flex flex-col gap-2 pt-12 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-6">
         <span>
           Brazil ·{" "}
           <a
@@ -103,11 +102,14 @@ function HomeComponent() {
             say hi
           </a>
         </span>
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <ul className="flex flex-wrap items-center gap-x-2 gap-y-2">
           {externalLinks.map((link) => {
             const external = link.url.startsWith("http");
             return (
-              <li key={link.url}>
+              <li
+                key={link.url}
+                className="before:mr-2 before:content-['\00b7'] first:before:hidden"
+              >
                 <a
                   href={link.url}
                   target={external ? "_blank" : undefined}
