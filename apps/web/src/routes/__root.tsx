@@ -19,7 +19,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       {
         name: "description",
         content:
-          "Personal site.",
+          "I build infrastructure and tools for AI agents, and care as much about the product and the user experience as the systems underneath.",
       },
     ],
     links: [
