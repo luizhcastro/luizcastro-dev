@@ -66,6 +66,7 @@ function HomeComponent() {
                   href="https://monest.com.br/mia"
                   target="_blank"
                   rel="noreferrer"
+                  data-umami-event="mia"
                   className="text-foreground underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
                 />
               }
@@ -85,6 +86,7 @@ function HomeComponent() {
             href="https://monest.com.br/"
             target="_blank"
             rel="noreferrer"
+            data-umami-event="monest"
             className="text-foreground underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
           >
             Monest
@@ -97,6 +99,7 @@ function HomeComponent() {
           Brazil ·{" "}
           <a
             href="mailto:luizcastro2122@gmail.com"
+            data-umami-event="email"
             className="underline underline-offset-4 decoration-border transition-colors hover:text-foreground"
           >
             say hi
@@ -114,6 +117,7 @@ function HomeComponent() {
                   href={link.url}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
+                  data-umami-event={link.name.toLowerCase()}
                   className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
                 >
                   {link.name}
