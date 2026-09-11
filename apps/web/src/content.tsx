@@ -1,34 +1,16 @@
-import {
-  Code,
-  Briefcase,
-  MessageCircle,
-} from "lucide-react";
 import type { ReactNode } from "react";
 
 export type ExternalLink = {
   name: string;
   url: string;
-  icon: ReactNode;
 };
 
 export const externalLinks: ExternalLink[] = [
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/luizzcastro",
-    icon: <Briefcase aria-hidden className="size-5" strokeWidth={1.8} />,
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/luizhcastro",
-    icon: <Code aria-hidden className="size-5" strokeWidth={1.8} />,
-  },
-  {
-    name: "Twitter",
-    url: "https://x.com/loez__",
-    icon: <MessageCircle aria-hidden className="size-5" strokeWidth={1.8} />,
-  },
+  { name: "LinkedIn", url: "https://linkedin.com/in/luizzcastro" },
+  { name: "GitHub", url: "https://github.com/luizhcastro" },
+  { name: "Twitter/X", url: "https://x.com/loez__" },
+  { name: "Linktree", url: "/linktree" },
 ];
-
 
 export type Thought = {
   slug: string;
@@ -70,5 +52,29 @@ export const thoughts: Thought[] = [
         </p>
       </>
     ),
+  },
+];
+
+export type LinktreeLink = {
+  name: string;
+  description: string;
+  url: string;
+};
+
+export const linktreeLinks: LinktreeLink[] = [
+  {
+    name: "Schedule a call",
+    description: "let's talk",
+    url: "https://cal.com/luizcastro",
+  },
+  {
+    name: "Railway",
+    description: "$20 free credits",
+    url: "https://railway.com?referralCode=vO6wl2",
+  },
+  {
+    name: "Curricu.lol",
+    description: "get your resume reviewed",
+    url: "https://curricu.lol/r/XMtJBuL",
   },
 ];

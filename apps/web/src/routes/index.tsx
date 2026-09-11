@@ -113,15 +113,24 @@ function HomeComponent() {
                 key={link.url}
                 className="before:mr-2 before:content-['\00b7'] first:before:hidden"
               >
-                <a
-                  href={link.url}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noreferrer" : undefined}
-                  data-umami-event={link.name.toLowerCase()}
-                  className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
-                >
-                  {link.name}
-                </a>
+                {external ? (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-umami-event={link.name.toLowerCase()}
+                    className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.url}
+                    className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground"
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             );
           })}
