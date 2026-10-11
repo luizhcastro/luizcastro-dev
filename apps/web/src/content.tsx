@@ -12,6 +12,25 @@ export const externalLinks: ExternalLink[] = [
   { name: "Linktree", url: "/linktree" },
 ];
 
+export type Project = {
+  name: string;
+  description: string;
+  // ponytail: no url = coming soon
+  url?: string;
+};
+
+export const projects: Project[] = [
+  {
+    name: "Radar",
+    description: "newsletter with tech blog posts curated to your profile",
+  },
+  {
+    name: "MacStats",
+    description: "native macOS menu bar app for real-time system stats",
+    url: "https://macstats.luizcastro.dev",
+  },
+];
+
 export type Thought = {
   slug: string;
   title: string;

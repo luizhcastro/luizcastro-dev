@@ -5,7 +5,7 @@ import {
 } from "@luizcastro-dev/ui/components/hover-card";
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-import { externalLinks } from "@/content";
+import { externalLinks, projects } from "@/content";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -43,7 +43,7 @@ function Section({
 function HomeComponent() {
   return (
     <main className="mx-auto w-full max-w-2xl px-5 pb-24">
-      <section className="pt-10 pb-4 sm:pt-14">
+      <section className="pt-10 pb-12 sm:pt-14">
         <img
           src="/luiz.png"
           alt="Luiz Castro"
@@ -93,6 +93,35 @@ function HomeComponent() {
           </a>
         </p>
       </section>
+
+      <Section title="Projects">
+        <ul className="flex flex-col gap-3">
+          {projects.map((project) => (
+            <li key={project.name}>
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-umami-event={project.name.toLowerCase()}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <span className="text-foreground">{project.name}</span>{" "}
+                  <span className="text-sm">{project.description}</span>
+                </a>
+              ) : (
+                <span className="text-muted-foreground">
+                  <span className="text-foreground">{project.name}</span>{" "}
+                  <span className="text-sm">{project.description}</span>{" "}
+                  <span className="ml-1 rounded-full border px-2 py-0.5 text-xs">
+                    coming soon
+                  </span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <footer className="flex flex-col gap-2 pt-12 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-6">
         <span>
