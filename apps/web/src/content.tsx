@@ -21,10 +21,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Radar",
-    description: "newsletter with tech blog posts curated to your profile",
-  },
-  {
     name: "MacStats",
     description: "native macOS menu bar app for real-time system stats",
     url: "https://macstats.luizcastro.dev",
